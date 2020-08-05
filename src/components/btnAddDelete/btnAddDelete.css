@@ -1,0 +1,15 @@
+.btnAddDelete {
+	position: absolute;
+	left: 85%;
+	top: 5px;
+	transform: translateX(-50%);
+	display: flex;
+	margin-left: auto;
+}
+.btn-size {
+	width: 38px;
+}
+
+.btn-size:first-child {
+	margin-right: 5px;
+}

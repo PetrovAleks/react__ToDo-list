@@ -1,0 +1,11 @@
+.done {
+	text-decoration: line-through;
+}
+.todo-liste-item {
+	cursor: pointer;
+}
+.important {
+	font-weight: bold;
+	color: gold;
+	font-size: 20px;
+}

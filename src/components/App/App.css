@@ -1,0 +1,15 @@
+.form {
+	display: flex;
+	flex-wrap: nowrap;
+
+	padding-bottom: 15px;
+}
+.wrapper-todo {
+	position: absolute;
+	padding: 50px 30px 90px 30px;
+
+	width: 450px;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
