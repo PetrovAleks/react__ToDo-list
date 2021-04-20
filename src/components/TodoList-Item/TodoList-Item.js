@@ -22,12 +22,12 @@ export default class TodoListTtem extends Component {
 		if (done) {
 			classNames += " done";
 		}
-
+console.dir(label)
 		return (
-			<span className={classNames} onClick={onItemDone}>
+			<div className={classNames} onClick={onItemDone}>
 				{label}
 				<BtnAddDelete deleteItem={() => deleteItem()} />
-			</span>
+			</div>
 		);
 	}
 }

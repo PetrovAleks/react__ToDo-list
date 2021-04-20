@@ -49,7 +49,7 @@ export default class App extends Component {
 					deleteItem={(id) => this.deleteItem(id)}
 					onItemDone={(id, event) => this.onItemDone(id, event)}
 				/>
-				<ItemsAddForm addItem={(text) => this.addItem(text)} />
+				<ItemsAddForm addItem={(task) => this.addItem(task)} />
 			</div>
 		);
 	}
@@ -74,7 +74,7 @@ export default class App extends Component {
 		this.setState({ term });
 	};
 	search = (items, term) => {
-		if (term === "") {
+		if (term !== "") {
 			return items;
 		}
 		const toLowerTerm = term.toLowerCase();
@@ -105,7 +105,7 @@ export default class App extends Component {
 		});
 	};
 
-	createToDoItem(label) {
+	createToDoItem (label)  {
 		const newItem = {
 			label,
 			done: false,
@@ -116,14 +116,20 @@ export default class App extends Component {
 		return newItem;
 	}
 
-	addItem = (text) => {
-		const newItem = this.createToDoItem(text);
+	addItem = (task) => {
+		const newItem = this.createToDoItem(task);
+		console.dir(task)
+		this.setState(({ todoData })=>{
+			return {
+				todoData :[...todoData,newItem]
+			}
 
-		this.setState(({ todoData }) => {
-			const newData = [...todoData];
-			newData.push(newItem);
-			return { todoData: newData };
-		});
+		})
+		// this.setState(({ todoData }) => {
+		// 	const newData = [...todoData];
+		// 	newData.push(newItem);
+		// 	return { todoData: newData };
+		// });
 	};
 
 	onItemDone = (id, event) => {
